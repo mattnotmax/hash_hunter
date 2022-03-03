@@ -125,7 +125,7 @@ func checkConfig() {
 	if err != nil {
 		panic(err)
 	}
-	exePath := filepath.Dir(exe) + "\\" + Config.ConfigFile
+	exePath := filepath.Dir(exe) + "/" + Config.ConfigFile
 	if fileExists(exePath) {
 		Config.Y.Printf("[*] Config file OK.\n")
 	} else {

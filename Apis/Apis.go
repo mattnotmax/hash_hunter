@@ -205,8 +205,8 @@ func Maltiverse(hash string) {
 	result := gjson.Get(stringResponse, "message")
 	if result.String() == "Not found" {
 		Config.R.Printf("\nMaltiverse: Sample not found.")
-	} else if result.String() == "Internal Server Error" {
-		Config.R.Printf("\nMaltiverse: Server Error")
+	} else if result.String() == "Internal Server Error" || result.String() == "API quota limit exceeded" {
+		Config.R.Printf("\nMaltiverse: Server Error / API limit.")
 	} else {
 		verdict := gjson.Get(stringResponse, "classification")
 		Config.G.Printf("\nMaltiverse: sample available. Verdict is %v.", verdict)
