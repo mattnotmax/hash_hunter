@@ -16,7 +16,6 @@ import (
 )
 
 func main() {
-	// consider flag to change the name of 'config.json'
 	var hashListFile = flag.String("f", "", "Path to text file containing SHA256 hashes (one per line).")
 	flag.Usage = usage
 	flag.Parse()
